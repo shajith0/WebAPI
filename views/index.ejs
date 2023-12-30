@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web api</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <div class="main-container">
+      <div class="info">
+        <h3 style="margin-top: 50px;">GHIPY </h3>
+        <h3>SECERT </h3>
+        <h3>BORED </h3>
+        <h3>JOKE</h3>
+        <h3>ADVICESLIP</h3>
+      </div>
+       <div class="advice">
+        <div class="advice-head">
+          <h3 style="flex: 9;">jokes </h3>
+          <img src="images/caution-sign.png" alt="" style="width: 30px;height: 30px;margin-top: 12px;margin-right: 10px;">
+          <h3 style="flex: 1;">dark</h3>
+        </div>
+        <div class="advice-container">
+        <% if (locals.joke && joke.joke) { %>
+          <h1><%= joke.joke %></h1>
+      <% } else if(locals.joke && joke.setup && joke.delivery){ %>
+        <div class="advice-2">
+              <h1><%= joke.setup %></h1>
+              <h1><%= joke.delivery %></h1>
+            </div>
+      <% } %>
+    </div>
+    <div class="advice-foot">
+      <hr>
+      <p style="font-size: 30px; font-family: 'coral';">refresh for more <img src="images/refresh.svg" alt="" style="width: 20px;height: 20px;"></p>
+    </div>
+  </div>
+       <div class="ghipy">
+        <% if (locals.giphyData && giphyData.data && giphyData.data.length > 0) { %>
+            <img src="<%= giphyData.data[0].images.fixed_height.url %>" alt="Giphy GIF"  loading="lazy">
+        <% } %>
+    </div>      
+       <div class="website">
+         
+        <span>
+          discuss<img src="images/singing.png" alt="">ideas<img src="images/spray.png" alt="">unexpected time<img src="images/splatter.png" alt="">impulse<img src="images/heart.png" alt="">independent<img src="images/bomb.png" alt=""> online<img src="images/graffiti.png" alt="">you can't<img src="images/bheart.png" alt="">experience<img src="images/arrow.svg" alt="">
+          discuss<img src="images/singing.png" alt="">ideas<img src="images/spray.png" alt="">unexpected time<img src="images/splatter.png" alt="">impulse<img src="images/heart.png" alt="">independent<img src="images/bomb.png" alt=""> online<img src="images/graffiti.png" alt="">you can't<img src="images/bheart.png" alt="">experience<img src="images/arrow.svg" alt="">
+          discuss<img src="images/singing.png" alt="">ideas<img src="images/spray.png" alt="">unexpected time<img src="images/splatter.png" alt="">impulse<img src="images/heart.png" alt="">independent<img src="images/bomb.png" alt=""> online<img src="images/graffiti.png" alt="">you can't<img src="images/bheart.png" alt="">experience<img src="images/arrow.svg" alt="">
+          discuss<img src="images/singing.png" alt="">ideas<img src="images/spray.png" alt="">unexpected time<img src="images/splatter.png" alt="">impulse<img src="images/heart.png" alt="">independent<img src="images/bomb.png" alt=""> online<img src="images/graffiti.png" alt="">you can't<img src="images/bheart.png" alt="">experience<img src="images/arrow.svg" alt="">
+          
+        </span>
+       </div>
+       <div class="secert">
+       
+          <% if(locals.secret){ %>
+            
+            <img src="<%= secret %>" alt="Secret QR Code" style = "width: 100%;height:80%;border-radius: 14px;">
+            
+          <%}%> 
+  
+          <p style="font-family: 'new';">people <img src="images/incognito.png" alt="" style="width: 25px; height: 25px;"> secerts</p>    
+       </div>
+       
+       <div class="joke">
+        <p>free advice</p>
+        <% if(locals.adviceData){%>
+          <h1><%=adviceData.slip.advice%></h1>
+           <%}%>
+       </div>
+       <div class="bored">
+
+        <form action="/" id="form" class="form" method="POST">
+            <select name="type" class="form-select">
+              <option value="" data-display="Select">Random type</option>
+              <option value="education">Education</option>
+              <option value="charity">Charity</option>
+              <option value="recreational">Recreational</option>
+              <option value="relaxation">Relaxation</option>
+              <option value="busywork">Busywork</option>
+              <option value="social">Social</option>
+              <option value="diy">DIY</option>
+              <option value="music">Music</option>
+            </select>
+            <select name="participants" class="form-select">
+              <option value="">Any number of people</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            <button type="submit" class="form-submit" class="submit">Go</button>
+          </form>
+          <section id="cards" class="cards" style="text-align: center;">
+            <%if (locals.data) {%>
+      
+              <article class="card-item">
+                <h2 class="card-activity">
+                  <%=data.activity %>
+                </h2>
+                <div class="card-info">
+                  <span class="card-type" style="font-family: 'new';">
+                    <%=data.type%>
+                  </span>
+                  <span class="card-participants" style="font-family: 'new';">
+                    participants: <%= data.participants%>
+                      <span class="card-number"></span>
+                  </span>
+                </div>
+              </article>
+      
+              <%}%>
+      
+      
+                <%if (locals.error) {%>
+                  <div id="tag-error" class="tag-error">
+                    <%=error%>
+                  </div>
+                  <%}%>
+          </section>
+
+       </div>
+       <div class="main">
+    <img src="https://www.kirupa.com/icon/1f354.svg" width="50" height="50">
+    <svg id="rotatingText" viewBox="0 0 200 200" width="220" height="220">
+      <defs>
+        <path id="circle" d="M 100, 100
+                m -75, 0
+                a 75, 75 0 1, 0 150, 0
+                a 75, 75 0 1, 0 -150, 0
+                ">
+        </path>
+      </defs>
+      <text width="400">
+        <textPath alignment-baseline="top" xlink:href="#circle" class="text">
+          Part of a heart-healthy breakfast...sorta! -
+        </textPath>
+      </text>
+    </svg>
+  </div>
+    </div>
+    <!-- Add this script for the glitch effect -->
+
+</body>
+</html>
