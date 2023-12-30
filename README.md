@@ -6,6 +6,8 @@ Welcome to the WebAPI Showcase project! 🚀
 
 WebAPI Showcase is a dynamic web project that integrates Giphy, Secret, Bored, Advice, and Joke APIs to create an interactive and engaging experience.
 
+![Screenshot (14)](https://github.com/shajith0/WebAPI/assets/111364959/e88a0d77-f8b3-4635-ac86-db7f2d42bdce)
+
 ## Features
 
 - Seamless integration of multiple APIs
