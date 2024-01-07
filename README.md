@@ -22,7 +22,7 @@ WebAPI Showcase is a dynamic web project that integrates Giphy, Secret, Bored, A
 
 ## Getting Started
 
-1. Clone the repository: `git clone [https://github.com/shajith0/WebAPI.git]`
+1. Clone the repository: `git clone https://github.com/shajith0/WebAPI.git`
 2. Open `index.ejs` in your preferred web browser.
 
 
